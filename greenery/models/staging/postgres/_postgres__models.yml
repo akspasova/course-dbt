@@ -1,0 +1,112 @@
+version: 2
+
+models:
+  - name: stg_postgres__products
+    description: Greenery's product catalogue.
+    columns:
+      - name: product_id
+        description: The unique identifier of the product.
+      - name: product_name
+        description: The name of the product in the catalogue.
+      - name: price
+        description: Product price.
+      - name: inventory
+        description: Amount of products currently in stock.
+  - name: stg_postgres__users
+    description: Greenery's client database.
+    columns:
+      - name: user_id 
+        description: UUID for each unique user on platform
+      - name: first_name
+        description: First name of the user
+      - name: last_name
+        description: Last name of the user
+      - name: email
+        description: Email address of the user
+      - name: phone_number
+        description: Phone number of the user
+      - name: created_at_utc
+        description: Timestamp the user was created
+      - name: updated_at_utc
+        description: Timestamp the user was last updated
+      - name: address_id
+        description: Default delivery address for the user
+  - name: stg_postgres__events
+    description: This is a dictionary of products
+    columns:
+      - name: event_id
+        description: UUID of each unique event on the platform
+      - name: session_id
+        description: UUID of each browsing session on the platform which can contain many events
+      - name: user_id
+        description: UUID of the user that this event is associated with
+      - name: page_url
+        description: URL that the event happened on
+      - name: created_at_utc
+        description: Timestamp when the event was triggered
+      - name: event_type
+        description: UUID of each unique event on the platform
+      - name: order_id
+        description: The order UUID for order specific events (mostly checkout)
+      - name: product_id
+        description: the product UUID for product specific events
+  - name: stg_postgres__orders
+    description: Order information
+    columns:
+      - name: order_id
+        description: UUID for each unique order on platform
+      - name: user_id
+        description: UserId of the user that placed this order
+      - name: promo_id
+        description: PromoId if any was used in the order
+      - name: address_id
+        description: Delivery address for this order
+      - name: created_at_utc
+        description: Timestamp when the order was created
+      - name: order_cost
+        description: Dollar amount of the items in the order
+      - name: shipping_cost
+        description: Cost of shipping for the order
+      - name: total_cost
+        description: Total cost of the order including shipping
+      - name: tracking_id
+        description: Tracking number for the order/package
+      - name: shipping_service
+        description: Company that was used for shipping
+      - name: estimated_delivery_at_utc
+        description: Estimated delivery timestamp
+      - name: delivered_at_utc
+        description: Actual timestamp of delivery
+      - name: order_status
+        description: Status of the order (delivered, shipped, preparing)
+  - name: stg_postgres__addresses
+    description: The default shipping address of the customers 
+    columns:
+      - name: address_id
+        description: UUID for each unique address on platform
+      - name: address
+        description: Street number and name
+      - name: zipcode
+        description: The zipcode of the area
+      - name: state
+        description: State this delivery address is based in
+      - name: country
+        description: Country this delivery address is based in
+  - name: stg_postgres__order_items
+    description: This is a dictionary of products
+    columns:
+      - name: order_id
+        description: UUID for each unique order on platform
+      - name: product_id
+        description: UUID for each unique product on platform part of the order
+      - name: quantity
+        description: Product amount ordered
+  - name: stg_postgres__promos
+    description: This is a dictionary of products
+    columns:
+      - name: promo_id
+        description: UUID for each unique promo on platform
+      - name: discount
+        description: Absolute dollar amount that is given off with the code
+      - name: promo_status
+        description: Is the promo code active or disabled
