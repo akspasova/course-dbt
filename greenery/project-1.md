@@ -1,4 +1,5 @@
 Q1: How many users do we have?
+    
     Result: 130 users in total
 
     SQL:
@@ -9,6 +10,7 @@ Q1: How many users do we have?
     ```
 
 Q2: On average, how many orders do we receive per hour?
+    
     Result: We receive 7.5 orders per hour on average
 
     SQL:
@@ -25,6 +27,7 @@ Q2: On average, how many orders do we receive per hour?
     ```
 
 Q3: On average, how long does an order take from being placed to being delivered?
+    
     Result: ~ 336 252 seconds average completion time (93.4 hours, i.e 3.9 days)
 
     SQL:
@@ -41,8 +44,11 @@ Q3: On average, how long does an order take from being placed to being delivered
 
 Q4: How many users have only made one purchase? Two purchases? Three+ purchases?
     Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.
+    
     Result: 25 user placed a single order
+            
             28 users placed two orders
+            
             71 users placed three+ orders
 
     SQL:
@@ -69,6 +75,7 @@ Q4: How many users have only made one purchase? Two purchases? Three+ purchases?
     ;
     ```
 Q5: On average, how many unique sessions do we have per hour?
+    
     Result: There are 16.3 session per hour on average
 
     SQL:
