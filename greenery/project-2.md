@@ -23,10 +23,13 @@ Q2: What are good indicators of a user who will likely purchase again?
   - Low order return and/or cancellation rate;
   - High number of recent visits;
   - High number of interactions with the website - e.g. products clicked or added to cart;
+
 Q3: What are indicators that a user who will not purchase again?
   - High order return and/or cancellation rate;
   - Low number of recent visits;
+
 Q4: Tests - just added simple tests for uniqueness and missing values to the raw data as I didn't have enough time to work on the project this week.
+
 Q5: Products with inventory change: 
     ```
     SELECT *
