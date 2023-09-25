@@ -1,21 +1,13 @@
 WITH products_data AS (
   SELECT *
   FROM {{ref('stg_postgres__products')}}
-), user_data AS (
-  SELECT *
-  FROM {{ref('stg_postgres__users')}}
 ), events_data AS (
   SELECT *
   FROM {{ref('stg_postgres__events')}}
-), address_data AS (
-  SELECT *
-  FROM {{ref('stg_postgres__addresses')}}
 ), user_location AS (
-  SELECT user_id
-    , state
-    , country
-  FROM user_data u
-  LEFT JOIN address_data a ON u.address_id = a.address_id
+  SELECT *
+  FROM {{ref('cl_user_attributes')}}
+  WHERE is_latest
 ), session_duration AS (
   SELECT session_id
     , MIN(created_at_utc) AS starts_at_utc

@@ -28,10 +28,10 @@ SELECT created_date_utc
   -- agg needed as data is on a daily not session level
   , MAX(product_bought_flag) AS product_bought_flag
   -- events
-  , COUNT(IFF(event_type = 'page_view', event_id, NULL)) AS page_views_events
-  , COUNT(IFF(event_type = 'add_to_cart', event_id, NULL)) AS add_to_cart_events
+  , COUNT(DISTINCT IFF(event_type = 'page_view', event_id, NULL)) AS page_views_events
+  , COUNT(DISTINCT IFF(event_type = 'add_to_cart', event_id, NULL)) AS add_to_cart_events
   -- sessions
-  , COUNT(IFF(event_type = 'page_view', session_id, NULL)) AS page_views_sessions
-  , COUNT(IFF(event_type = 'add_to_cart', session_id, NULL)) AS add_to_cart_sessions
+  , COUNT(DISTINCT IFF(event_type = 'page_view', session_id, NULL)) AS page_views_sessions
+  , COUNT(DISTINCT IFF(event_type = 'add_to_cart', session_id, NULL)) AS add_to_cart_sessions
 FROM combine_events_with_flag e
 GROUP BY all
