@@ -22,7 +22,7 @@ WITH orders_dataset AS (
         'price', ROUND(p.price,2) ::NUMBER(38,2)
       ) AS product
   FROM ordered_items_dataset oi
-  LEFT JOIN products_dataset p ON oi.product_id = oi.product_id
+  LEFT JOIN products_dataset p ON oi.product_id = p.product_id
 ), order_promo AS (
   SELECT o.*
     , p.discount
