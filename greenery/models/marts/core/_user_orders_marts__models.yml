@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: fact_product_page_views
+    description: Daily product level events per user. The table can be used as a basis for funnel analysis and product performance.
+    columns:
+      - name: user_id
+        description: The unique identifier of the user.
+      - name: user_grade
+        description: Grading of the users based on number of orders A (> 6 orders), B(2-5 order), C(1 orders) and D (zombies)
+      - name: state
+        description: State the latest delivery address is based in
+      - name: country
+        description: Country the latest delivery address is based in
+      - name: first_order
+        description: The date first order was placed
+      - name: last_order
+        description: The date last order was placed
+      - name: orders
+        description: Total number of user orders
+      - name: products_types
+        description: The number of product types the user bought
+      - name: products_quantity
+        description: The total amount of products the user bought
+      - name: promotions
+        description: How many times the user used a promocode
+      - name: amount_spent
+        description: The amount the user spent on products from our website

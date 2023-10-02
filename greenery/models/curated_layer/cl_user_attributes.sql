@@ -34,7 +34,7 @@ SELECT u.user_id
       WHEN o.orders = 1
         THEN 'C'
       ELSE 'D'
-    END AS vendor_grade
+    END AS user_grade
   , IFF(o.promo_id IS NOT NULL, TRUE, FALSE) AS uses_promo_codes
 FROM user_data u
 LEFT JOIN address_data a ON u.address_id = a.address_id
