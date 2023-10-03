@@ -29,7 +29,7 @@ Q2: What is our product conversion rate?
     ORDER BY 3 DESC
     ```
 Q6: Which products had their inventory change from week 2 to week 3? 
-
+   Result: Monstera, Philodendron, Pothos, String of pearls, Bamboo, ZZ Plant
     SQL:
     ```
       SELECT *
