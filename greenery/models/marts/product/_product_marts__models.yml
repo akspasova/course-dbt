@@ -12,11 +12,13 @@ models:
         description: State the latest delivery address is based in
       - name: user_id
         description: The unique identifier of the user.
-      - name: daily_time_on_site_sec
-        description: The total time in seconds the user spent on our website in a given day
-      - name: daily_sessions
-        description: The total number of sessions the user had on our website in a given day
+      - name: session_duration_sec
+        description: The total time in seconds the user spent on our website in a given session
+      - name: session_id
+        description: The unique identifier of the session
       - name: product_bought_flag
+        description: Flag indicating if the user bought the product in a given day
+      - name: product_shipped_flag
         description: Flag indicating if the user bought the product in a given day
       - name: page_views_events
         description: How many times the user viewed the product
@@ -26,3 +28,20 @@ models:
         description: How many session the user viewed the product
       - name: add_to_cart_sessions
         description: How many session the user added the product to their cart
+  - name: fact_session_product_level_events
+    description: Count of distinct events per session.
+    columns:
+      - name: session_id
+        description: Unique identifier of the session 
+      - name: product_id
+        description: Unique identifier of the product
+      - name: product_name
+        description: The name of the product
+      - name: page_views_events
+        description: Number of page view events during the session for a given product
+      - name: add_to_cart_events
+        description: Number of add to cart events during the session for a given product
+      - name: checkout_events
+        description: Number of checkout events during the session
+      - name: package_shipped_events
+        description: Number of package shipped events during the session

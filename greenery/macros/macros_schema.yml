@@ -1,0 +1,10 @@
+version: 2
+
+macros:
+  - name: count_events
+    description: aggregation that counts distinct events per event type
+    arguments:
+      - name: col_name
+        description: name of the column we refer to
+      - name: col_value
+        description: value of the respective column

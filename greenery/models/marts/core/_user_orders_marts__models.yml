@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fact_product_page_views
+  - name: fact_user_orders
     description: Daily product level events per user. The table can be used as a basis for funnel analysis and product performance.
     columns:
       - name: user_id

@@ -92,6 +92,8 @@ models:
         description: Total cost of the order including shipping
         tests:
           - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
       - name: tracking_id
         description: Tracking number for the order/package
       - name: shipping_service
