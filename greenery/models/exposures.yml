@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+
+  - name: fact_product_funnel
+    label: Product funnel of greenery data
+    type: dashboard
+    maturity: high
+    url: https://bi.tool/dashboards/1
+    description: >
+      This dashboard shows product funnel for greenery data
+
+    depends_on:
+      - ref('cl_events')
+
+    owner:
+      name: Anelia Spasova
+      email: anelia.spasova@deliveryhero.com

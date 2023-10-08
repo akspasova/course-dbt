@@ -45,3 +45,20 @@ models:
         description: Number of checkout events during the session
       - name: package_shipped_events
         description: Number of package shipped events during the session
+  - name: fact_product_funnel
+    description: Count of distinct events per session.
+    columns:
+      - name: created_date_utc
+        description: The date of the events
+      - name: country
+        description: The country where the users who generate these events are located
+      - name: state
+        description: The state where the users who generate these events are located
+      - name: event_type
+        description: The event type
+      - name: sessions_cnt
+        description: Number of sessions per event type
+      - name: users_cnt
+        description: Number of users per event type
+      - name: events_cnt
+        description: Number of distinct events generated per event type
