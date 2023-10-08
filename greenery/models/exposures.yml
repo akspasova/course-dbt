@@ -6,7 +6,7 @@ exposures:
     label: Product funnel of greenery data
     type: dashboard
     maturity: high
-    url: https://bi.tool/dashboards/1
+    url: https://app.sigmacomputing.com/corise-dbt/workbook/Product-Funnel-73YrPL9ZlCDQQXLTiPvjAU
     description: >
       This dashboard shows product funnel for greenery data
 

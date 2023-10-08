@@ -37,3 +37,10 @@ Q3.2: Did we have any items go out of stock in the last 3 weeks?
     LEFT JOIN stg_postgres__products p ON s.name = p.product_name
     WHERE s.inventory = 0
     ```
+Q4: Quick Product Funnel Visualisation: https://app.sigmacomputing.com/corise-dbt/workbook/Product-Funnel-73YrPL9ZlCDQQXLTiPvjAU
+    & dbt doc: https://8080-akspasova-coursedbt-1xygc41a5ql.ws-eu105.gitpod.io/#!/exposure/exposure.greenery.fact_product_funnel
+
+3A&B. Reflecting on your learning in this class...
+   I loved the course and I think the information is super useful. I really appreciate that the lectures are being recorded and there are walkthroughs for the projects. It would have been nice if it is possible to start the advanced course right after this course. I understand that this course is targetng people not only with engineering background and the information I got here is useful but not enough to do my daily job and unfortunately for the next one we have to wait at least till January.
+
+   I would use dbt with Airflow as a scheduler as atm this is my only option. How often the pipeline runs depends on the size and stage of the company development and amount of data and how often the product is sending data to the raw layer.
