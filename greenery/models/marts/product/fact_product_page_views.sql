@@ -1,11 +1,11 @@
 WITH events_curated_data AS (
   SELECT *
   FROM {{ref('cl_events')}}
-), session_add_product_bought_flag AS (
+), session_add_product_bought_and_shipped_flags AS (
   SELECT session_id
     , product_id
     , CAST(MAX(IFF(event_type = 'add_to_cart' AND created_at_utc < last_checkout_at_utc , 1, 0)) AS BOOLEAN) AS product_bought_flag
-    , CAST(MAX(IFF(event_type = 'package_shipped' AND created_at_utc < last_checkout_at_utc , 1, 0)) AS BOOLEAN) AS product_shipped_flag
+    , CAST(MAX(IFF(event_type = 'add_to_cart' AND created_at_utc < last_package_shipped_at_utc , 1, 0)) AS BOOLEAN) AS product_shipped_flag
   FROM events_curated_data
   WHERE product_id IS NOT NULL
   GROUP BY all
@@ -16,7 +16,7 @@ WITH events_curated_data AS (
     , f.product_shipped_flag
   FROM cl_events e
   -- used to filter out product unrelated events
-  INNER JOIN session_add_product_bought_flag f ON e.session_id = f.session_id
+  INNER JOIN session_add_product_bought_and_shipped_flags f ON e.session_id = f.session_id
   AND e.product_id = f.product_id
 )
 

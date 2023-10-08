@@ -13,6 +13,7 @@ WITH products_data AS (
     , MIN(created_at_utc) AS starts_at_utc
     , MAX(created_at_utc) AS ends_at_utc
     , MAX(IFF(event_type = 'checkout', created_at_utc, NULL)) AS last_checkout_at_utc
+    , MAX(IFF(event_type = 'package_shipped', created_at_utc, NULL)) AS last_package_shipped_at_utc
   FROM events_data
   GROUP BY 1
 )
@@ -23,6 +24,7 @@ SELECT DATE(e.created_at_utc) AS created_date_utc
   , s.starts_at_utc AS session_starts_at
   , TIMESTAMPDIFF('second', s.starts_at_utc, s.ends_at_utc) AS session_duration_sec
   , s.last_checkout_at_utc
+  , s.last_package_shipped_at_utc
   , e.order_id
   , e.event_type
   , e.user_id

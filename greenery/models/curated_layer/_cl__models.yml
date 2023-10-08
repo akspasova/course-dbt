@@ -25,6 +25,7 @@ models:
       - name: session_starts_at
       - name: session_duration_sec
       - name: last_checkout_at_utc
+      - name: last_package_shipped_at_utc
       - name: order_id
       - name: event_type
       - name: user_id
