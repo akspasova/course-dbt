@@ -40,6 +40,10 @@ Q3.2: Did we have any items go out of stock in the last 3 weeks?
 Q4: Quick Product Funnel Visualisation: https://app.sigmacomputing.com/corise-dbt/workbook/Product-Funnel-73YrPL9ZlCDQQXLTiPvjAU
     & dbt doc: https://8080-akspasova-coursedbt-1xygc41a5ql.ws-eu105.gitpod.io/#!/exposure/exposure.greenery.fact_product_funnel
 
+    - Which steps in the funnel have largest drop off points? As expectect, the biggest drop off is from "page views" to "add to cart" events and session. The good thing is that as many users have page views events and also have added product to cart, which never happens in real companies. Also, > 99% of the users had a check out event. So event if we see a drop off in events and sessions all of our users engaged with our website and almost everyone bought a product.
+    We see more users with shipped events than any other event, which is not expected behaviour and indicates that either there's a problem with the data (wrong entries or we have missing events for some users) or I made a mistake somewhere (I don't want to bug fix in my free time).
+
+
 3A&B. Reflecting on your learning in this class...
    I loved the course and I think the information is super useful. I really appreciate that the lectures are being recorded and there are walkthroughs for the projects. It would have been nice if it is possible to start the advanced course right after this course. I understand that this course is targetng people not only with engineering background and the information I got here is useful but not enough to do my daily job and unfortunately for the next one we have to wait at least till January.
 
